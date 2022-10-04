@@ -1,7 +1,8 @@
 var pageContentEl = document.querySelector("#page-content");
 var footerEl = document.querySelector("#right-or-wrong");
 var correctAnswers = 0;
-var quizArray = []
+var quizArray = [];
+var scores = [];
 
 var answerResult = function(event) {
     
@@ -27,10 +28,11 @@ var answerResult = function(event) {
 }
 
 var scoresPage = function() {
+
     var verdictRemover = document.getElementById("right-or-wrong");
     verdictRemover.innerHTML= "";
 
-    var input = document.getElementById("userInput").value;
+    var userName = document.getElementById("userInput").value;
 
     var pageRemover = document.getElementById("page-content");
     pageRemover.innerHTML= "";
@@ -40,7 +42,7 @@ var scoresPage = function() {
     pageContentEl.appendChild(highScores);
 
     var playerShower = document.createElement("p");
-    playerShower.textContent = input + " - " + correctAnswers;
+    playerShower.textContent = userName + " - " + correctAnswers;
     pageContentEl.appendChild(playerShower);
 
     var backBtn = document.createElement("button");
@@ -51,11 +53,13 @@ var scoresPage = function() {
     clearBtn.textContent= "Clear High Scores";
     pageContentEl.appendChild(clearBtn);
 
+    scores = [[name, input]];
     backBtn.addEventListener("click", landingPageLaunch);
 
 }   
 
 var finalPage = function() {
+
 
     var pageRemover = document.getElementById("page-content");
     pageRemover.innerHTML= "";
@@ -91,9 +95,8 @@ var createQuizForm = function() {
     //creates random number to select random array
     var random = Math.floor(Math.random() * quizArray.length);
     var selectedArray = quizArray[random];
-
     //removes the randomly selected array from the main array
-    quizArray.splice(selectedArray, 1);
+    quizArray.splice(random, 1);
 
     //creates h1 element to display the question
     var quizQuestionEl = document.createElement("h1");
@@ -143,7 +146,7 @@ var landingPageLaunch = function(){
                  ["The condition in an if/else statement is enclosed with ____. ", "quotes","curly brackets","zparentheses","square brackets"],
                  ["Arrays in JavaScript can be used to store _______","numbers and strings","other arrays","booleans","zall of the above"],
                  ["String values must be enclosed within _____ when being assigned to variables","commas","curly brackets","zquotes","parentheses"],
-                 ["A very useful tool used during development and debugging for printing content to the debugger is:", "JavaScript", "terminal/bash","for loops","zconsole log"]]
+                 ["A very useful tool used during development and debugging for printing content to the debugger is:", "JavaScript", "terminal/bash","for loops","zconsole log"]];
 
      //clears the page
      var pageRemover = document.getElementById("page-content");
