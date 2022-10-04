@@ -4,6 +4,7 @@ var correctAnswers = 0;
 var quizArray = [];
 var scores = [];
 
+//displays if an answer is right or wrong
 var answerResult = function(event) {
     
     var eventTarget = event.target;
@@ -12,6 +13,7 @@ var answerResult = function(event) {
     var verdictRemover = document.getElementById("right-or-wrong");
     verdictRemover.innerHTML= "";
 
+    //reads "correct" attribute set to 1 or 0
     var isAnswered = eventTarget.hasAttribute("correct");
     if (isAnswered) {
         var isCorrect = eventTarget.getAttribute("correct");
@@ -27,6 +29,7 @@ var answerResult = function(event) {
     createQuizForm();
 }
 
+//displays scores
 var scoresPage = function() {
 
     var verdictRemover = document.getElementById("right-or-wrong");
@@ -53,14 +56,13 @@ var scoresPage = function() {
     clearBtn.textContent= "Clear High Scores";
     pageContentEl.appendChild(clearBtn);
 
-    scores = [[name, input]];
     backBtn.addEventListener("click", landingPageLaunch);
-
 }   
 
+//displays score + form submission for leaderboard
 var finalPage = function() {
 
-
+//clears page
     var pageRemover = document.getElementById("page-content");
     pageRemover.innerHTML= "";
     
@@ -155,7 +157,7 @@ var landingPageLaunch = function(){
      var verdictRemover = document.getElementById("right-or-wrong");
     verdictRemover.innerHTML= "";
  
-
+    
     var introEl = document.createElement("h1");
     introEl.textContent="Coding Quiz Challenge!"
     pageContentEl.appendChild(introEl);
