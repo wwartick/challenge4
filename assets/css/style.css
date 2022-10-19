@@ -1,0 +1,58 @@
+#view-scores{
+    color:blue;
+}
+#view-scores:hover {
+    color: purple;
+}
+
+#timer {
+    padding-left: 80%;
+    font-weight: bold;
+    color: red;
+}
+
+.main{
+    display:block;
+    text-align: center;
+}
+
+.btn-group{
+    text-align: center;
+    padding-left: 20%;
+}
+
+.btn-group button{
+    background-color: purple; 
+    border: 10px solid white; 
+    color: white; /* White text */
+    padding: 10px ; /* Some padding */
+    cursor: pointer; 
+    width: 25%; 
+    display: block; 
+    border-radius: 25px;
+    text-align: left;
+}
+
+.btn-group button:hover {
+    background-color: lightpink;
+  }
+
+.score-btn {
+    background-color: purple; 
+    border: 10px solid white; 
+    color: white; /* White text */
+}
+
+.start-btn {
+    background-color: purple; 
+    padding: 15px;
+    color: white; /* White text */
+}
+
+.verdict{
+    border-top: 5px solid black;
+    margin-top: 10px;
+    text-align: center;
+    font-style: italic;
+    opacity: 30%;
+}
