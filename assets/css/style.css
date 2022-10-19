@@ -49,6 +49,22 @@
     color: white; /* White text */
 }
 
+.final-btn {
+    background-color: purple; 
+    margin: 10px;
+    padding: 15px;
+    color: white; /* White text */
+}
+
+.player-list{
+    text-align: center;
+    background-color: navy;
+    color:white;
+    padding: 5px 0 0 5px;
+    margin-left:  46%;
+    margin-right: 46%;
+}
+
 .verdict{
     border-top: 5px solid black;
     margin-top: 10px;

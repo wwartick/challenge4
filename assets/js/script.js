@@ -65,7 +65,8 @@ var scoresPage = function() {
     } else {
         for (i=0; i < oldScores.length; i++) {
             var playerShower = document.createElement("p");
-            playerShower.textContent = oldScores[i].name + " - " + oldScores[i].score; 
+            playerShower.className = "player-list"
+            playerShower.textContent = (i +1) + ". " + oldScores[i].name + " - " + oldScores[i].score; 
             pageContentEl.appendChild(playerShower);
             };
     }
@@ -73,11 +74,13 @@ var scoresPage = function() {
     //button that restarts the quiz
     var backBtn = document.createElement("button");
     backBtn.textContent = "Restart";
+    backBtn.className = "final-btn"
     pageContentEl.appendChild(backBtn);
 
     //button that clears the board
     var clearBtn = document.createElement("button");
     clearBtn.textContent= "Clear High Scores";
+    clearBtn.className = "final-btn"
     pageContentEl.appendChild(clearBtn);
 
     //event listeners
