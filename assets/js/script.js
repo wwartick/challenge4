@@ -193,8 +193,8 @@ var landingPageLaunch = function(){
 
 
 var beginQuiz = function() {
-
-    time = 20000;
+    //initializes and resets timer/array upon start of the quiz
+    time = 75;
     quizArray = [
         ["Commonly used data types DO NOT include: ", "strings", "booleans", "zalerts", "numbers"], 
         ["The condition in an if/else statement is enclosed with ____. ", "quotes","curly brackets","zparentheses","square brackets"],
@@ -207,13 +207,13 @@ var beginQuiz = function() {
     intervalId = setInterval(myTimer, 1000);
 }
 
+//end quiz from timer
 var endQuiz = function() {
     timerEl.textContent = "Timer: " + (time);
     if (time <=0) {
         time = 0;
         clearInterval(intervalId);
         finalPage();
-
     } else 
     
     clearInterval(intervalId);
@@ -221,6 +221,7 @@ var endQuiz = function() {
     
 }
 
+//timer function
 var myTimer = function() {
     if (time <=0) {
         time = 0;
